@@ -18,6 +18,7 @@
 </template>
 
 <script setup>
+import { validateSelectOptions } from '../../validators'
 import { XMarkIcon } from '@heroicons/vue/24/outline'
 import AppButton from './AppButton.vue'
 
@@ -25,7 +26,8 @@ defineProps({
   selected: Number,
   options: {
     type: Array,
-    required: true
+    required: true,
+    validator: validateSelectOptions
   },
   placeholder: {
     type: String,
