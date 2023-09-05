@@ -21,13 +21,15 @@
 <script setup>
 import { ref } from 'vue'
 import { TrashIcon } from '@heroicons/vue/24/outline'
+import {isActivityValid} from '../validators'
 import AppButton from './ui/AppButton.vue'
 import AppSelect from './ui/AppSelect.vue'
 
 defineProps ({
   activity: {
     required: true,
-    type: String
+    type: String,
+    validator: isActivityValid
   }
 })
 
