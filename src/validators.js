@@ -1,4 +1,4 @@
-import { HOURS_IN_DAY } from './constants'
+import { HOURS_IN_DAY, BUTTON_TYPES } from './constants'
 
 export function isTimelineItemValid({ hour }) {
   return isHourValid(hour)
@@ -24,6 +24,9 @@ export function isActivityValid(activity) {
 }
 export function isHourValid(hour) {
   return typeof isNumber(hour) && hour >= 0 && hour < HOURS_IN_DAY
+}
+export function isButtonTypeValid(type) {
+  return BUTTON_TYPES.includes(type)
 }
 function isNull(value) {
   return value === null
